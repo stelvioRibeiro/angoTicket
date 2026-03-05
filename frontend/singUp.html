@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registrar | TicketApp</title>
+<style>
+body{
+  margin:0;
+  font-family:'Segoe UI', sans-serif;
+  background:linear-gradient(135deg,#0f172a,#1e293b);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+.container{
+  background:white;
+  padding:40px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border-radius:20px;
+  width:380px;
+  gap: 15px;
+  box-shadow:0 20px 50px rgba(0,0,0,0.4);
+  animation: fadeIn 1s ease-in-out;
+}
+h1{
+   text-align:center; 
+   margin-bottom:25px;
+   }
+input{
+  width:95%;
+  padding:12px;
+  border-radius:10px;
+  border:1px solid #ddd;
+}
+.criarConta{
+  color:#2563eb; 
+  text-decoration:none;
+}
+.criarConta:hover{
+  color: #0c2e8a;
+}
+p{
+  text-align: center;
+}
+button{
+  width:103%;
+  padding:12px;
+  border:none;
+  border-radius:10px;
+  background:#2563eb;
+  color:white;
+  cursor:pointer;
+  transition:0.3s;
+}
+button:hover{ 
+  background:#0f172a;
+  transform: scale(1.05);
+  transition: 1s;
+ }
+@media(max-width:480px){ 
+  .container{width:90%;} 
+  }
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Registrar</h1>
+  <input type="text" id="name" placeholder="Nome">
+  <input type="email" id="email" placeholder="Email">
+  <input type="password" id="password" placeholder="Senha">
+  <button onclick="register()">Criar Conta</button>
+  <p>Já tem conta? <a class="criarConta" href="login.html">Login</a></p>
+</div>
+<script src="js/app.js"></script>
+</body>
+</html>

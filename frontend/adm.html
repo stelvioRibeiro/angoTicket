@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin | TicketApp</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+body{ margin:0; font-family:'Segoe UI'; background:#eef2ff; }
+header{ background:#111827; color:white; padding:20px; display:flex; justify-content:space-between; }
+header button{ background:#ef4444; color:white; border:none; padding:8px 12px; border-radius:6px; cursor:pointer; }
+.section{ padding:30px; }
+.table{ width:100%; border-collapse:collapse; background:white; border-radius:15px; overflow:hidden; box-shadow:0 10px 25px rgba(0,0,0,0.1); margin-bottom:30px;}
+.table th{ background:#2563eb; color:white; padding:12px; }
+.table td{ padding:12px; border-bottom:1px solid #eee; }
+.table tr:hover{ background:#f1f5f9; }
+button.delete{ background:#ef4444; color:white; border:none; padding:8px 12px; border-radius:6px; cursor:pointer; }
+button.delete:hover{ background:#dc2626; }
+@media(max-width:768px){ .table, thead, tbody, th, td, tr{ display:block; } .table tr{ margin-bottom:15px; } .table td{ text-align:right; padding-left:50%; position:relative; } .table td::before{ content:attr(data-label); position:absolute; left:10px; font-weight:bold; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Admin Panel</h1>
+  <button onclick="logout()">Sair</button>
+</header>
+
+<div class="section">
+  <h2>Estatísticas</h2>
+  <canvas id="chart"></canvas>
+</div>
+
+<div class="section" id="usersSection">
+  <h2>Usuários</h2>
+  <div id="users"></div>
+</div>
+
+<div class="section" id="eventsSection">
+  <h2>Eventos</h2>
+  <div id="events"></div>
+</div>
+
+<div class="section" id="ticketsSection">
+  <h2>Ingressos</h2>
+  <div id="tickets"></div>
+</div>
+
+<script src="js/app.js"></script>
+<script>
+checkAuth();
+loadStats();
+loadUsers();
+loadAllEvents();
+loadTickets();
+</script>
+</body>
+</html>
